@@ -9,7 +9,7 @@ files:
 - name: main.py
   visible: true
   placeholders:
-  - offset: 315
+  - offset: 313
     length: 154
     placeholder_text: '...  # TODO метод должен возвращать строку, по которой можно
       инициализировать экземпляр класса'
