@@ -25,6 +25,6 @@ class Node:
         if not isinstance(node, (type(None), Node)):
             raise TypeError
 
-    def set_next(self, next_: Optional["Node"] = None) -> None:
+    def set_next(self, next_: Optional["Node"] = None) -> None: #устанавливает взаимосвязь между левым и правым
         self.is_valid(next_)
         self.next = next_
