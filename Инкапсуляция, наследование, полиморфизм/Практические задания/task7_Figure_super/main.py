@@ -1,4 +1,12 @@
-class Figure:
+"""
+полиморфизм - один класс на множество повторяющихся действий
+
+наследование - какому то новому классу передаем свойства которые были в родительском класе
+
+инкапсуляция - init в более широков формате, все что используем для реализации конкретного
+действия должно быть зашито в конкретном классе
+"""
+class Figure: #базовый класс
     def __init__(self, name=None):
         self.name = name
 
@@ -6,9 +14,10 @@ class Figure:
         print(self.name)
 
 
-class Rectangle(Figure):
+class Rectangle(Figure): #класс наследования сообщили два аргумента
     def __init__(self, a, b, name=None):
         # TODO вызвать конструктор базового класса
+        super().__init__(name) #вызвали инициализацую конструктора из родительского класса
         self.a = a
         self.b = b
 
@@ -16,3 +25,5 @@ class Rectangle(Figure):
 if __name__ == "__main__":
     rect = Rectangle(5, 10, 'rect_fig')
     rect.print_name()
+
+

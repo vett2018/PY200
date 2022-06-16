@@ -4,7 +4,7 @@ from node import Node
 
 
 class LinkedList:
-    def __init__(self, data: Iterable = None):
+    def __init__(self, data: Iterable = None): #наследуем
         """Конструктор связного списка"""
         self.len = 0
         self.head: Optional[Node] = None
@@ -14,7 +14,7 @@ class LinkedList:
             for value in data:
                 self.append(value)
 
-    def append(self, value: Any):
+    def append(self, value: Any): #перегружаем из за 19 строки
         """ Добавление элемента в конец связного списка. """
         append_node = Node(value)
 
@@ -26,7 +26,7 @@ class LinkedList:
 
         self.len += 1
 
-    def step_by_step_on_nodes(self, index: int) -> Node:
+    def step_by_step_on_nodes(self, index: int) -> Node: #наследуем
         """ Функция выполняет перемещение по узлам до указанного индекса. И возвращает узел. """
         if not isinstance(index, int):
             raise TypeError()
@@ -41,7 +41,7 @@ class LinkedList:
         return current_node
 
     @staticmethod
-    def linked_nodes(left_node: Node, right_node: Optional[Node] = None) -> None:
+    def linked_nodes(left_node: Node, right_node: Optional[Node] = None) -> None: #перегружаем правый с левом узлом
         """
         Функция, которая связывает между собой два узла.
 
@@ -50,23 +50,23 @@ class LinkedList:
         """
         left_node.next = right_node
 
-    def __getitem__(self, index: int) -> Any:
+    def __getitem__(self, index: int) -> Any: #наследуем
         """ Метод возвращает значение узла по указанному индексу. """
         node = self.step_by_step_on_nodes(index)
         return node.value
 
-    def __setitem__(self, index: int, value: Any) -> None:
+    def __setitem__(self, index: int, value: Any) -> None: #наследуем
         """ Метод устанавливает значение узла по указанному индексу. """
         node = self.step_by_step_on_nodes(index)
         node.value = value
 
-    def to_list(self) -> list:
+    def to_list(self) -> list: #наследуем
         return [linked_list_value for linked_list_value in self]
 
-    def __repr__(self) -> str:
+    def __repr__(self) -> str: #наследуем
         return f"{self.__class__.__name__}({self.to_list()})"
 
-    def __str__(self) -> str:
+    def __str__(self) -> str: #наследуем
         return f"{self.to_list()}"
 
 

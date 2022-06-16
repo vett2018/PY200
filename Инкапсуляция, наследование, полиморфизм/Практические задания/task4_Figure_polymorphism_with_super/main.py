@@ -1,4 +1,4 @@
-class Rectangle:
+class Rectangle: # вычисление площади не в кв метрах, а в футах квадратных
     """ Базовый класс. """
 
     def __init__(self, a, b):
@@ -15,7 +15,7 @@ class RectangleFoot(Rectangle):
 
     def area(self):
         """ Переводим площадь в футы. """
-        area = ...  # TODO вызываем метод area базового класса
+        area = super().area()  # TODO вызываем метод area базового класса  # вызываем метод который зашит в базовом класс
         return area / (self.FOOT_IN_METERS ** 2)
 
 
