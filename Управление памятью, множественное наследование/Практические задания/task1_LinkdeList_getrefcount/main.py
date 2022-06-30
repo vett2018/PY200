@@ -80,7 +80,15 @@ class LinkedList:
 if __name__ == '__main__':
     ll = LinkedList([1, 2, 3, 4, 5])
 
-    print(sys.getrefcount(ll.head))
+    print(sys.getrefcount(ll.head)) # считает кол-во ссылок на каждый элемент
 
     for node in ll.nodes_iterator():
         print(sys.getrefcount(node))
+"""
+1 от head
+2 от get refcount
+3 for
+4 функция генератор
+5 tail
+
+"""

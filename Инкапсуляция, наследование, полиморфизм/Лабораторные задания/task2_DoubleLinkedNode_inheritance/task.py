@@ -49,14 +49,14 @@ class DoubleLinkedNode(Node): #двусвязная нода
 
     def __repr__(self):
         next_repr: str = str(None) \
-            if self. next is None \
+            if self.next is None \
             else f"DubleLinkedNode({self.next.value}, {None}, {None})"
 
         prev_repr: str = str(None) \
-        if self.next is None \
-        else f"DubleLinkedNode({self.prev.value}, {None}, {None})"
+            if self.next is None \
+            else f"DoubleLinkedNode({self.prev.value}, {None}, {None})"
 
-        return f"DubleLinkedNode({self.value}, {next_repr}, {prev_repr})"
+        return f"DoubleLinkedNode({self.value}, {next_repr}, {prev_repr})"
 
 if __name__ == 'main':
     first_node = DoubleLinkedNode(1)
